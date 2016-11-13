@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Blackened">
+
+    <title>EHP Calc</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+
+    function update() {
+      var baseHealth = 0;
+      var baseArmor = 0;
+
+      baseHealth = parseInt($("#base-health").val());
+      baseArmor = parseFloat($("#base-armor").val()) / 100.0;
+
+      var boostHealth = 0;
+      if ($("#boost-node-enabled").prop("checked")) {
+        boostHealth = parseInt($("#boost-node").val()) / 100.0 * baseHealth;
+      }
+
+      var healthHealth = 0;
+      if ($("#health-node-enabled").prop("checked")) {
+        healthHealth = parseInt($("#health-node").val()) / 100.0 * baseHealth;
+      }
+
+      if ($("#armor-node-enabled").prop("checked")) {
+        baseArmor = baseArmor + (parseInt($("#armor-node").val()) / 100.0);
+      }
+
+
+      var finalHealth = Math.floor(baseHealth + boostHealth + healthHealth);
+      var effectiveHealth = Math.floor(finalHealth * (1 + baseArmor));
+
+
+      if (finalHealth && effectiveHealth) {
+        var willpowerLow = Math.floor(finalHealth * 0.005);
+        var willpowerHigh = Math.floor(finalHealth * 0.007 * 1.3);
+
+        console.log("Base: " + finalHealth + " - EHP:" + effectiveHealth);
+
+        $("#final-effective-health").text(effectiveHealth);
+        $("#final-base-health").text(finalHealth);
+
+        $("#final-willpower-heal").text(willpowerLow + " - " + willpowerHigh);
+
+      }
+
+    }
+
+    </script>
+
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">EHP Calc</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Results
+            </div>
+            <div class="panel-body">
+              <ul class="list-group">
+
+                <li class="list-group-item list-group-item-info">
+                  Effective Health: <span class="pull-right" id="final-effective-health">0</span>
+                </li>
+
+                <li class="list-group-item list-group-item-success">
+                  Base Health: <span class="pull-right" id="final-base-health">0</span>
+                </li>
+
+                <li class="list-group-item ">
+                  Willpower Heal: <span class="pull-right" id="final-willpower-heal">0</span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-12 ">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Setup
+            </div>
+            <div class="panel-body">
+
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="health-group">Health</span>
+                  <input id="base-health" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="10000" aria-describedby="health-group">
+                </div>
+              </p>
+
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="armor-group">Armor</span>
+                  <input id="base-armor" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="10" aria-describedby="armor-group">
+                </div>
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-12 ">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Nodes
+            </div>
+            <div class="panel-body">
+
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="boost-node-group">Champion Boost</span>
+                  <input id="boost-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="100" aria-describedby="boost-node-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" onclick="update()" aria-label="boost-node-enable" id="boost-node-enabled">
+                  </span>
+                </div>
+              </p>
+
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="health-node-group">Health</span>
+                  <input id="health-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="300" aria-describedby="health-node-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" onclick="update()" aria-label="health-node-enable" id="health-node-enabled">
+                  </span>
+                </div>
+              </p>
+
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="armor-node-group">Armor</span>
+                  <input id="armor-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="20" aria-describedby="armor-node-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" onclick="update()" aria-label="armor-node-enable" id="armor-node-enabled">
+                  </span>
+                </div>
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+  </body>
+
+</html>
