@@ -22,12 +22,29 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
     <style>
-    body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    }
+      /* Sticky footer styles
+      -------------------------------------------------- */
+      html {
+        position: relative;
+        min-height: 100%;
+      }
+      body {
+        /* Margin bottom by footer height */
+        margin-bottom: 60px;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        height: 60px;
+        background-color: #f5f5f5;
+      }
+
+      .container .text-muted {
+        margin: 20px 0;
+      }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -39,12 +56,72 @@
 
     <script type="text/javascript">
 
-    function update() {
-      var baseHealth = 0;
-      var baseArmor = 0;
+    var champStats = {};
 
-      baseHealth = parseInt($("#base-health").val());
-      baseArmor = parseFloat($("#base-armor").val()) / 100.0;
+    $(function() {
+      var champSelect = $("#champ-select");
+      var rankSelect = $("#rank-select");
+
+      $.getJSON("data/coc.json", function(data) {
+        $.each(data, function(key, val) {
+          champStats[key] = val;
+          champSelect.append($("<option />").val(key).text(val.name));
+        });
+      });
+
+
+      champSelect.change(function() {
+        rankSelect.empty().append($("<option />").val("none"));
+        reset();
+
+        var selected = champSelect.val();
+        if (champStats[selected]) {
+          var ranks = champStats[selected].rank;
+          $.each(ranks, function(key, val) {
+            rankSelect.append($("<option />").val(key).text(key));
+          });
+        }
+      });
+
+      rankSelect.change(function() {
+        if (rankSelect.val() === "none") {
+          reset();
+          return;
+        }
+
+        var selected = champStats[champSelect.val()];
+        var stats = selected.rank[rankSelect.val()];
+
+        console.log("Selected: " + selected.name + " hp(" + stats.hp + ")")
+        setValues(stats.hp, stats.armor, stats.evade);
+
+      })
+
+    });
+
+
+    function reset() {
+      setValues("", "", "");
+    }
+
+
+    function setValues(health, armor, evade) {
+      $("#base-health").val(health);
+      $("#base-armor").val(armor);
+      $("#base-evade").val(evade);
+
+      update();
+    }
+
+
+    function update() {
+      var baseHealth = parseInt($("#base-health").val());
+      var baseArmor = parseFloat($("#base-armor").val()) / 100.0;
+      var baseEvade = 0;
+      if ($("#base-evade").val()) {
+        baseEvade = parseFloat($("#base-evade").val()) / 100.0;
+      }
+
 
       var boostHealth = 0;
       if ($("#boost-node-enabled").prop("checked")) {
@@ -61,8 +138,17 @@
       }
 
 
+      // max armor possible is 90%
+      if (baseArmor > 0.9) {
+        baseArmor = 0.9;
+      }
+
+
       var finalHealth = Math.floor(baseHealth + boostHealth + healthHealth);
-      var effectiveHealth = Math.floor(finalHealth * (1 + baseArmor));
+      var effectiveHealth = Math.floor(
+        /* The actual EHP calculation: */
+        finalHealth * (1 + baseArmor) * (1 + baseEvade)
+      );
 
 
       if (finalHealth && effectiveHealth) {
@@ -76,6 +162,10 @@
 
         $("#final-willpower-heal").text(willpowerLow + " - " + willpowerHigh);
 
+      } else {
+        $("#final-effective-health").text("0");
+        $("#final-base-health").text(0);
+        $("#final-willpower-heal").text("");
       }
 
     }
@@ -86,7 +176,7 @@
 </head>
 
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">EHP Calc</a>
@@ -98,7 +188,7 @@
 
       <div class="row">
 
-        <div class="col-sm-12">
+        <div class="col-lg-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               Results
@@ -115,7 +205,7 @@
                 </li>
 
                 <li class="list-group-item ">
-                  Willpower Heal: <span class="pull-right" id="final-willpower-heal">0</span>
+                  Willpower Heal: <span class="pull-right" id="final-willpower-heal"></span>
                 </li>
 
               </ul>
@@ -125,12 +215,27 @@
 
 
 
-        <div class="col-sm-12 ">
+        <div class="col-lg-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              Setup
+              Champion
             </div>
             <div class="panel-body">
+
+
+              <div class="row">
+                <div class="col-xs-7">
+
+                  <select class="form-control" id="champ-select">
+                    <option value="none" />
+                  </select>
+                </div>
+
+                <div class="col-xs-5">
+                  <select class="form-control" id="rank-select">
+                  </select>
+                </div>
+              </div>
 
               <p>
                 <div class="input-group">
@@ -146,13 +251,20 @@
                 </div>
               </p>
 
+              <p>
+                <div class="input-group">
+                  <span class="input-group-addon" id="evade-group">Evade</span>
+                  <input id="base-evade" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="0" aria-describedby="evade-group">
+                </div>
+              </p>
+
             </div>
           </div>
         </div>
 
 
 
-        <div class="col-sm-12 ">
+        <div class="col-lg-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               Nodes
@@ -198,7 +310,16 @@
       </div>
 
 
-    </div>
+    </div> <!-- /container -->
+
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted pull-right">
+          <a href="https://github.com/cbaltzer/ehp-calc/issues" class="text-muted"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Issues </a>
+        </p>
+      </div>
+    </footer>
   </body>
 
 </html>

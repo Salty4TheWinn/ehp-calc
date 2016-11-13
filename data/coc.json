@@ -1,0 +1,28 @@
+{
+  "spidermanclassic": {
+    "name": "Spider-Man (Classic)",
+    "rank": {
+      "4* 4/40": {
+        "hp": "90095",
+        "armor": "11",
+        "evade": "20"
+      },
+      "5* 2/35": {
+        "hp": "13125",
+        "armor": "15",
+        "evade": "20"
+      }
+    }
+  },
+
+  "ultronaou": {
+    "name": "Ultron (Age of Ultron)",
+    "rank": {
+      "4* 4/40": {
+        "hp": "12654",
+        "armor": "13"
+      }
+    },
+    "note": "Ultrons evade is calculated blah blah"
+  }
+}
