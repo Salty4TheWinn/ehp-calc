@@ -80,6 +80,11 @@
           $.each(ranks, function(key, val) {
             rankSelect.append($("<option />").val(key).text(key));
           });
+
+          if (champStats[selected].note) {
+            $("#champ-note").text(champStats[selected].note);
+            $("#champ-note").toggleClass("hidden", false);
+          }
         }
       });
 
@@ -101,6 +106,8 @@
 
 
     function reset() {
+      $("#champ-note").text("");
+      $("#champ-note").toggleClass("hidden", true);
       setValues("", "", "");
     }
 
@@ -258,6 +265,11 @@
                 </div>
               </p>
 
+              <p>
+                <div id="champ-note" class="alert alert-info hidden" role="alert">
+                </div>
+              </p>
+
             </div>
           </div>
         </div>
@@ -274,7 +286,7 @@
               <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="boost-node-group">Champion Boost</span>
-                  <input id="boost-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="100" aria-describedby="boost-node-group">
+                  <input id="boost-node" oninput="update()" type="number" pattern="\d*" class="form-control" value="100" aria-describedby="boost-node-group">
                   <span class="input-group-addon">
                     <input type="checkbox" onclick="update()" aria-label="boost-node-enable" id="boost-node-enabled">
                   </span>
@@ -284,7 +296,7 @@
               <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="health-node-group">Health</span>
-                  <input id="health-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="300" aria-describedby="health-node-group">
+                  <input id="health-node" oninput="update()" type="number" pattern="\d*" class="form-control" value="300" aria-describedby="health-node-group">
                   <span class="input-group-addon">
                     <input type="checkbox" onclick="update()" aria-label="health-node-enable" id="health-node-enabled">
                   </span>
@@ -294,7 +306,7 @@
               <p>
                 <div class="input-group">
                   <span class="input-group-addon" id="armor-node-group">Armor</span>
-                  <input id="armor-node" oninput="update()" type="number" pattern="\d*" class="form-control" placeholder="20" aria-describedby="armor-node-group">
+                  <input id="armor-node" oninput="update()" type="number" pattern="\d*" class="form-control" value="20" aria-describedby="armor-node-group">
                   <span class="input-group-addon">
                     <input type="checkbox" onclick="update()" aria-label="armor-node-enable" id="armor-node-enabled">
                   </span>

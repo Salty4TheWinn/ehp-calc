@@ -1,28 +1,701 @@
 {
-  "spidermanclassic": {
-    "name": "Spider-Man (Classic)",
+  "abomination": {
+    "name": "Abomination",
     "rank": {
-      "4* 4/40": {
-        "hp": "90095",
-        "armor": "11",
-        "evade": "20"
-      },
-      "5* 2/35": {
-        "hp": "13125",
-        "armor": "15",
-        "evade": "20"
+      "4* - 4/40": {
+        "hp": "12648",
+        "armor": "14"
       }
     }
   },
-
-  "ultronaou": {
-    "name": "Ultron (Age of Ultron)",
+  "agentvenom": {
+    "name": "Agent Venom",
     "rank": {
-      "4* 4/40": {
-        "hp": "12654",
-        "armor": "13"
+      "4* - 4/40": {
+        "hp": "11281",
+        "armor": "11"
+      }
+    }
+  },
+  "antman": {
+    "name": "Ant-Man",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12876",
+        "armor": "11"
+      },
+      "5* - 1/25": {
+        "hp": "10162",
+        "armor": "16"
+      }
+    }
+  },
+  "beast": {
+    "name": "Beast",
+    "rank": {
+
+    }
+  },
+  "blackbolt": {
+    "name": "Black Bolt",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      }
+    }
+  },
+  "blackpanther": {
+    "name": "Black Panther (Classic)",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "12345",
+        "armor": "17"
+      }
+    }
+  },
+  "blackpanthercw": {
+    "name": "Black Panther (Civil War)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12990",
+        "armor": "0"
+      }
+    }
+  },
+  "blackwidow": {
+    "name": "Black Widow",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11",
+        "evade": "3"
+      }
+    }
+  },
+  "captainamerica": {
+    "name": "Captain America",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      }
+    }
+  },
+  "captainamericaww2": {
+    "name": "Captain America (WW2)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12306",
+        "armor": "11"
+      }
+    }
+  },
+  "captainmarvel": {
+    "name": "Captain Marvel",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "12225",
+        "armor": "17"
+      }
+    }
+  },
+  "civilwarrior": {
+    "name": "Civil Warrior",
+    "rank": {
+
+    }
+  },
+  "colossus": {
+    "name": "Colossus",
+    "rank": {
+
+    }
+  },
+  "crossbones": {
+    "name": "Crossbones",
+    "rank": {
+
+    }
+  },
+  "cyclopsblue": {
+    "name": "Cyclops (Blue Team)",
+    "rank": {
+
+    }
+  },
+  "cyclopsred": {
+    "name": "Cyclops (New Xavier School)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      },
+      "5* - 2/35": {
+        "hp": "12345",
+        "armor": "17"
+      }
+    }
+  },
+  "daredevil": {
+    "name": "Daredevil (Classic)",
+    "rank": {
+
+    }
+  },
+  "daredevilnf": {
+    "name": "Daredevil (Netflix)",
+    "rank": {
+
+    }
+  },
+  "deadpool": {
+    "name": "Deadpool",
+    "rank": {
+
+    }
+  },
+  "deadpoolxforce": {
+    "name": "Deadpool (X-Force)",
+    "rank": {
+
+    }
+  },
+  "drstrange": {
+    "name": "Doctor Strange",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10027",
+        "armor": "11"
+      }
+    }
+  },
+  "drvoodoo": {
+    "name": "Doctor Voodoo",
+    "rank": {
+
+    }
+  },
+  "drax": {
+    "name": "Drax",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "13064",
+        "armor": "19"
+      }
+    }
+  },
+  "electro": {
+    "name": "Electro",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "8204",
+        "armor": "11"
+      }
+    }
+  },
+  "elektra": {
+    "name": "Elektra",
+    "rank": {
+
+    }
+  },
+  "falcon": {
+    "name": "Falcon",
+    "rank": {
+
+    }
+  },
+  "gambit": {
+    "name": "Gambit",
+    "rank": {
+
+    }
+  },
+  "gamora": {
+    "name": "Gamora",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11"
+      }
+    }
+  },
+  "ghostrider": {
+    "name": "Ghost Rider",
+    "rank": {
+
+    }
+  },
+  "groot": {
+    "name": "Groot",
+    "rank": {
+
+    }
+  },
+  "guillotine": {
+    "name": "Guillotine",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10825",
+        "armor": "20"
       }
     },
-    "note": "Ultrons evade is calculated blah blah"
+    "note": "Guillotine's passive armor is included in the armor value listed"
+  },
+  "hawkeye": {
+    "name": "Hawkeye",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11985",
+        "armor": "12"
+      }
+    }
+  },
+  "hulk": {
+    "name": "Hulk",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12648",
+        "armor": "14"
+      }
+    }
+  },
+  "hulkbuster": {
+    "name": "Hulkbuster",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12648",
+        "armor": "18"
+      }
+    }
+  },
+  "ironfist": {
+    "name": "Iron Fist",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9571",
+        "armor": "0"
+      }
+    }
+  },
+  "ironfistimmortal": {
+    "name": "Iron Fist (Immortal)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9571",
+        "armor": "0"
+      }
+    }
+  },
+  "ironman": {
+    "name": "Iron Man",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10483",
+        "armor": "15"
+      },
+      "5* - 2/35": {
+        "hp": "11026",
+        "armor": "21"
+      }
+    }
+  },
+  "ironpatriot": {
+    "name": "Iron Patriot",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10483",
+        "armor": "15"
+      }
+    }
+  },
+  "joefixit": {
+    "name": "Joe Fixit",
+    "rank": {
+
+    }
+  },
+  "juggernaut": {
+    "name": "Juggernaut",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12648",
+        "armor": "31"
+      },
+      "5* - 2/35": {
+        "hp": "13304",
+        "armor": "34"
+      }
+    },
+    "note": "Juggernaut's passive armor is included"
+  },
+  "karnak": {
+    "name": "Karnak",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11850",
+        "armor": "11"
+      }
+    }
+  },
+  "lukecage": {
+    "name": "Luke Cage",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12420",
+        "armor": "13"
+      }
+    }
+  },
+  "magik": {
+    "name": "Magik",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10369",
+        "armor": "11"
+      }
+    }
+  },
+  "magneto": {
+    "name": "Magneto",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      },
+      "5* - 2/35": {
+        "hp": "12345",
+        "armor": "17"
+      }
+    }
+  },
+  "magnetowhite": {
+    "name": "Magneto (Marvel Now!)",
+    "rank": {
+
+    }
+  },
+  "moonknight": {
+    "name": "Moon Knight",
+    "rank": {
+
+    }
+  },
+  "mordo": {
+    "name": "Mordo",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      }
+    }
+  },
+  "msmarvel": {
+    "name": "Ms. Marvel",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      }
+    }
+  },
+  "msmarvelkk": {
+    "name": "Ms. Marvel (Kamala Khan)",
+    "rank": {
+
+    }
+  },
+  "nightcrawler": {
+    "name": "Nightcrawler",
+    "rank": {
+
+    }
+  },
+  "oldmanlogan": {
+    "name": "Old Man Logan",
+    "rank": {
+
+    }
+  },
+  "phoenix": {
+    "name": "Phoenix",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9799",
+        "armor": "13"
+      }
+    }
+  },
+  "punisher": {
+    "name": "Punisher",
+    "rank": {
+
+    }
+  },
+  "quake": {
+    "name": "Quake",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11"
+      }
+    }
+  },
+  "redhulk": {
+    "name": "Red Hulk",
+    "rank": {
+
+    }
+  },
+  "rhino": {
+    "name": "Rhino",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "13304",
+        "armor": "34"
+      }
+    },
+    "note": "Rhino's passive armor is included"
+  },
+  "rocket": {
+    "name": "Rocket Raccoon",
+    "rank": {
+
+    }
+  },
+  "rogue": {
+    "name": "Rogue",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11"
+      }
+    }
+  },
+  "ronan": {
+    "name": "Ronan",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "13064",
+        "armor": "19"
+      }
+    }
+  },
+  "scarletwitch": {
+    "name": "Scarlet Witch",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11"
+      },
+      "4* - 5/50": {
+        "hp": "14596",
+        "armor": "12"
+      }
+    }
+  },
+  "shehulk": {
+    "name": "She-Hulk",
+    "rank": {
+
+    }
+  },
+  "spidergwen": {
+    "name": "Spider-Gwen",
+    "rank": {
+
+    }
+  },
+  "spidermanclassic": {
+    "name": "Spider-Man (Classic)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9116",
+        "armor": "11",
+        "evade": "18"
+      }
+    },
+    "note": "Evade is based on level 20 signature"
+  },
+  "spidermanmiles": {
+    "name": "Spider-Man (Miles Morales)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9571",
+        "armor": "11",
+        "evade": "15"
+      }
+    },
+    "note": "Miles' evade diminishes from 28% to 0%, so it's averaged to something in between"
+  },
+  "spidermanblack": {
+    "name": "Spider-Man (Symbiote)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9571",
+        "armor": "11",
+        "evade": "5"
+      }
+    },
+    "note": "Evade is nullifyable and can be waited out, so only count some trivial value"
+  },
+  "starlord": {
+    "name": "Star-Lord",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      },
+      "5* - 2/35": {
+        "hp": "12345",
+        "armor": "17"
+      }
+    }
+  },
+  "storm": {
+    "name": "Storm",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "10939",
+        "armor": "11"
+      },
+      "5* - 2/35": {
+        "hp": "11506",
+        "armor": "17"
+      }
+    }
+  },
+  "superiorironman": {
+    "name": "Superior Iron Man",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11053",
+        "armor": "15"
+      }
+    }
+  },
+  "thanos": {
+    "name": "Thanos",
+    "rank": {
+
+    }
+  },
+  "thor": {
+    "name": "Thor",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12420",
+        "armor": "13"
+      }
+    }
+  },
+  "thorjanefoster": {
+    "name": "Thor (Jane Foster)",
+    "rank": {
+
+    }
+  },
+  "unstoppablecolossus": {
+    "name": "Unstoppable Colossus",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12340",
+        "armor": "13"
+      }
+    }
+  },
+  "ultron": {
+    "name": "Ultron (Age of Ultron)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12654",
+        "armor": "13",
+        "evade": "13"
+      }
+    },
+    "note": "Ultrons triggers on timer, 25 times in a 3 minute fight, or 13% of the time."
+  },
+  "ultronclassic": {
+    "name": "Ultron (Classic)",
+    "rank": {
+
+    }
+  },
+  "venom": {
+    "name": "Venom",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12876",
+        "armor": "14"
+      },
+      "4* - 5/50": {
+        "hp": "17180",
+        "armor": "15"
+      }
+    }
+  },
+  "venompool": {
+    "name": "Venompool",
+    "rank": {
+
+    }
+  },
+  "vision": {
+    "name": "Vision (Age of Ultron)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "11736",
+        "armor": "11"
+      }
+    }
+  },
+  "visionclassic": {
+    "name": "Vision (Classic)",
+    "rank": {
+
+    }
+  },
+  "warmachine": {
+    "name": "War Machine",
+    "rank": {
+
+    }
+  },
+  "wintersoldier": {
+    "name": "Winter Soldier",
+    "rank": {
+      "5* - 2/35": {
+        "hp": "12345",
+        "armor": "17"
+      }
+    }
+  },
+  "wolverine": {
+    "name": "Wolverine",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9913",
+        "armor": "11"
+      }
+    }
+  },
+  "wolverinex23": {
+    "name": "Wolverine (X-23)",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "9116",
+        "armor": "11"
+      }
+    }
+  },
+  "yellowjacket": {
+    "name": "Yellowjacket",
+    "rank": {
+      "4* - 4/40": {
+        "hp": "12420",
+        "armor": "11"
+      }
+    }
   }
 }
